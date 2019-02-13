@@ -54,7 +54,7 @@ Node <T> *copy (Node <T> *pFront )
  * various parts of the node as a whole.
  ***************************************/
 template <class T>
-void insert(T newItem, Node <T> *&pFront, bool isHead = false)
+Node <T>* insert(Node <T> *&pFront, T newItem, bool isHead = false)
 {
    Node <T> *itemNode = new Node<T>(newItem);
 
@@ -76,18 +76,56 @@ void insert(T newItem, Node <T> *&pFront, bool isHead = false)
       temp->pNext = pFront->pNext;
       pFront->pNext = temp;
    }
+
+   return pFront;
+ }
+
+
+
+/***********************************
+ * Insert:
+ * A simple function that inserts into
+ * various parts of the node as a whole.
+ * This is an overload to the above class
+ ***************************************/
+template <class T>
+Node <T>* insert(T newItem, Node <T> *&pFront, bool isHead = false)
+{
+	Node <T> *itemNode = new Node<T>(newItem);
+
+	if (pFront == NULL)
+	{
+		pFront = itemNode;
+	}
+
+	else if (isHead)
+	{
+		itemNode->pNext = pFront;
+		pFront = itemNode;
+	}
+
+	else
+	{
+		Node <T> *temp = new Node <T>;
+		temp = itemNode;
+		temp->pNext = pFront->pNext;
+		pFront->pNext = temp;
+	}
+
+	return pFront;
 }
+
 
 /****************************************
  * Find:
  * Searches the linked list for an item.
  ***************************************/
 template <class T>
-Node <T> *find(Node <T> *pFront, T &finding)
+Node <T> *find(Node <T> *pFront, T finding)
 {
-   if (pFront == NULL)
+   if (pFront == nullptr)
    {
-      return NULL;
+      return nullptr;
    }
 
    for (Node <T> *tempNode = pFront; tempNode; tempNode = tempNode->pNext)
