@@ -120,7 +120,7 @@ Node <T>* insert(Node <T> *&pFront, T newItem, bool after = false)
       
    }
 }
-**********************************
+/**********************************
  * Insert:
  * A simple function that inserts into
  * various parts of the node as a whole.
@@ -191,6 +191,11 @@ Node <T>* insert(T newItem, Node <T> *&pFront, bool isHead = false)
    }
 }
 
+template <class T>
+Node <T> remove()
+{
+
+}
 
 /****************************************
  * Find:
