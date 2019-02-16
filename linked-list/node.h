@@ -16,8 +16,8 @@ class Node
  ***********************/
    Node()
    {
-      pNext = NULL;
-      pPrev = NULL;
+      pNext = nullptr;
+      pPrev = nullptr;
    }  
 
 /**********************************
@@ -27,8 +27,8 @@ class Node
    Node(T dat)
    {
       data = dat;
-      pNext = NULL;
-      pPrev = NULL;
+      pNext = nullptr;
+      pPrev = nullptr;
    }
 };
 
@@ -45,7 +45,7 @@ Node <T> *copy (Node <T> *pFront )
    {
       copyNode = insert(tempNode->data, copyNode);
       tempNode = tempNode->pNext;
-   } while (tempNode != NULL);
+   } while (tempNode != nullptr);
    
    return copyNode;
 }
@@ -60,7 +60,7 @@ Node <T>* insert(Node <T> *&pFront, T newItem, bool after = false)
 {
    Node <T> *itemNode = new Node<T>(newItem); //making a new node
    
-   if (pFront == NULL)
+   if (pFront == nullptr)
    {
       pFront = itemNode;
       return pFront;
@@ -82,7 +82,7 @@ Node <T>* insert(Node <T> *&pFront, T newItem, bool after = false)
       itemNode->pNext = temp; //the new one points forward to the next one
       
       //now it is possible that the next one soesn't exist and is NULL, if it is we are done, if not have it point back
-      if(temp == NULL)
+      if(temp == nullptr)
       {
          return itemNode;
       }
@@ -107,7 +107,7 @@ Node <T>* insert(Node <T> *&pFront, T newItem, bool after = false)
       itemNode->pPrev = temp;
 
       //Now we handle the case of the NULL pointer in temp.
-      if(temp == NULL)
+      if(temp == nullptr)
       {
          return itemNode;
       }
@@ -152,7 +152,7 @@ Node <T>* insert(T newItem, Node <T> *&pFront, bool after = false)
       itemNode->pNext = temp; //the new one points forward to the next one
       
       //now it is possible that the next one soesn't exist and is NULL, if it is we are done, if not have it point back
-      if(temp == NULL)
+      if(temp == nullptr)
       {
          return itemNode;
       }
@@ -177,7 +177,7 @@ Node <T>* insert(T newItem, Node <T> *&pFront, bool after = false)
       itemNode->pPrev = temp;
 
       //Now we handle the case of the NULL pointer in temp.
-      if(temp == NULL)
+      if(temp == nullptr)
       {
          return itemNode;
       }
@@ -255,9 +255,9 @@ template<class T>
 std::ostream& operator<<(std::ostream &output, Node <T> *pFront)
 {
    Node <T> *outputNode = pFront;
-   while (outputNode != NULL)
+   while (outputNode != nullptr)
    {
-      if (outputNode->pNext == NULL)
+      if (outputNode->pNext == nullptr)
       {
          output << outputNode->data;
       }
@@ -282,9 +282,9 @@ std::ostream& operator<<(std::ostream &output, Node <T> *pFront)
 template <class T>
 void freeData(Node <T> *&pFront)
 {
-   Node <T> *deleteNode = NULL;
+   Node <T> *deleteNode = nullptr;
    Node <T> *tempNode = deleteNode = pFront; //i dont understand this line
-   while(tempNode != NULL)
+   while(tempNode != nullptr)
    {
       deleteNode = tempNode;
       tempNode = tempNode->pNext;

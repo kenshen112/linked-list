@@ -25,7 +25,7 @@ void sortInsertion(T array[], int num)
 
    for (int i = 0; i < num; i++)
    {
-      if (pFront == NULL) //if it's the first element
+      if (pFront == nullptr) //if it's the first element
       {
          pFront = insert(pFront, array[i]);
       }
@@ -34,14 +34,14 @@ void sortInsertion(T array[], int num)
          Node <T> *n = pFront;
          while(array[i] >= n->data)
          {
-            if(n->pNext != NULL)
+            if(n->pNext != nullptr)
             {
                n = n->pNext;
             }
             else
                break;
          }
-         if(n->pNext != Null)
+         if(n->pNext != nullptr)
          {
             insert(array[i], n);
          }
