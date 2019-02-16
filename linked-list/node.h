@@ -38,12 +38,12 @@ class Node
 template<class T>
 Node <T> *copy (Node <T> *pFront )
 {
-   Node <T> *copyNode = NULL;
+   Node <T> *copyNode = new Node<T>;
    Node <T> *tempNode = pFront;
    
    do
    {
-      insert(tempNode->data, copyNode);
+      insert(tempNode->data, copyNode, true);
       tempNode = tempNode->pNext;
    } while (tempNode != NULL);
    
