@@ -21,7 +21,7 @@ template <class T>
 void sortInsertion(T array[], int num)
 {
  // 1. insert elements from array[] into a linked list
-   Node <T> *pFront = NULL;
+   Node <T> *pFront = new Node <T>;
 
    for (int i = 0; i < num; i++)
    {
@@ -29,39 +29,36 @@ void sortInsertion(T array[], int num)
       {
          pFront = insert(pFront, array[i]);
       }
-      else if (pFront != NULL)
+      else
       {
-         Node <T> * n = pFront;
-         if (pFront->pNext != NULL) //if there is another node in the list
+         Node <T> *n = pFront;
+         while(array[i] >= n->data)
          {
-            while ()
+            if(n->pNext != NULL)
             {
-
-               if (array[i] <= *pFront->data)
-               {
-                  *pFront->pPrev = insert(pFront, array[i]); //assigns the pointer to the new Node to the pPrev pointer of pFront
-                  *pFront = pFront->pPrev; //changes pFront to be the Node that we just inserted before the old pFront
-               }
-               else if (array[i] > )
-               {
-                  *pFront->pNext = insert(pFront, array[i], after = true);
-
-               }
+               n = n->pNext;
             }
+            else
+               break;
+         }
+         if(n->pNext != Null)
+         {
+            insert(array[i], n);
          }
          else
          {
-
+            insert(array[i], n, true);
          }
 
       }
 
    }
 
+   
    // copy the elements to the array
-  for (int j = 0; j < num; j++)
+   for (int j = 0; j < num; j++)
    {
-      array[j] = *pFront->data;
+      array[j] = pFront->data;
       pFront = remove(pFront);
    }
 
