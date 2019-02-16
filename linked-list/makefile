@@ -7,17 +7,20 @@
 #	Tim O'Barr
 #	Jessica Smith
 # Hours:
-# 	Paired:
-#	Ken Smith:
-#	Tim O'Barr:
-#	Jessica Smith:
+# 	Paired: 7 hours
+#       Solo:
+#	Ken Smith: 5 hours
+#	Tim O'Barr: 10 hours
+#	Jessica Smith: 4 hours
 # Summary:
 #     This program creates a Node for a Linked List and then
 #	proceeds to sort the linked list
 #Difficulties:
-# Ken Smith:
-# Tim O'Barr:
-# Jessica Smith:
+# Ken Smith: We decided to use gitHub, which was new for me, and I had a hard time
+#               figuring out how to use it.
+# Tim O'Barr: 
+# Jessica Smith: Figuring out the logic for sortInsertion was
+#	difficult and took some time.
 ###############################################################
 
 ##############################################################
