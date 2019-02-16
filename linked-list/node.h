@@ -38,7 +38,7 @@ class Node
 template<class T>
 Node <T> *copy (Node <T> *pFront )
 {
-   Node <T> *copyNode = new Node<T>;
+   Node <T> *copyNode = nullptr;
    Node <T> *tempNode = pFront;
    
    do
