@@ -130,7 +130,7 @@ Node <T>* insert(T newItem, Node <T> *&pFront, bool isHead = false)
 {
    Node <T> *itemNode = new Node<T>(newItem); //making a new node
    
-   bool after;
+   bool after = false;
 
    if (pFront == NULL)
    {
@@ -193,7 +193,7 @@ Node <T>* insert(T newItem, Node <T> *&pFront, bool isHead = false)
 }
 
 template <class T>
-Node <T> remove(Node <T> *pRemove)
+Node <T>* remove(Node <T> *pRemove)
 {
 	Node <T>* pReturn;
 
