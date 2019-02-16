@@ -431,7 +431,7 @@ void testRemove()
            << endl;
 
       // remove something from the front
-      p = remove(find(p, string("Pig")));
+      p = remove(find(p, string("Pig"))); //this is an address that's why the int conversion
       cout << "Remove Pig from the beginning: "
            << p
            << endl;

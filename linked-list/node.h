@@ -45,8 +45,7 @@ Node <T> *copy (Node <T> *pFront )
    {
       insert(tempNode->data, copyNode);
       tempNode = tempNode->pNext;
-   }
-   while(tempNode != NULL)
+   } while (tempNode != NULL);
    
    return copyNode;
 }
@@ -131,13 +130,15 @@ Node <T>* insert(T newItem, Node <T> *&pFront, bool isHead = false)
 {
    Node <T> *itemNode = new Node<T>(newItem); //making a new node
    
+   bool after;
+
    if (pFront == NULL)
    {
       pFront = itemNode;
       return pFront;
    }
    
-   if(after)
+   if(after) //this was supposed to be a bool. need to rework this
    {
       //insert after the passed node
       // potentially three nodes involved. the one passed, the new node, the next node. they need to end in that order.
@@ -192,9 +193,25 @@ Node <T>* insert(T newItem, Node <T> *&pFront, bool isHead = false)
 }
 
 template <class T>
-Node <T> remove()
+Node <T> remove(Node <T> *pRemove)
 {
+	
 
+	if (pRemove == nullptr)
+	{
+		return pRemove;
+	}
+
+	if (pRemove->pPrev != nullptr)
+	{
+		pRemove->pPrev->pNext = pRemove->pNext;
+	}
+	if (pRemove->pNext != nullptr)
+	{
+		pRemove->pNext->pPrev = pRemove->pPrev;
+	}
+
+	return pRemove;
 }
 
 /****************************************
@@ -245,7 +262,6 @@ std::ostream& operator<<(std::ostream &output, Node <T> *pFront)
 
    return output;
 }
-
 
 /*******************************************************************
  * freeData:
