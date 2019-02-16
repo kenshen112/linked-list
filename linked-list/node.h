@@ -48,6 +48,8 @@ Node <T> *copy (Node <T> *pFront )
       {
          pHead = insert(tempNode->data, copyNode);
          copyNode = pHead;
+         first = false;
+         tempNode = tempNode->pNext;
       }
       else
       {
