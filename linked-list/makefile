@@ -1,11 +1,23 @@
 ###############################################################
 # Program:
 #     Assignment 06, NODE
-#     Brother XXXXX, CS235
+#     Brother Kirby, CS235
 # Author:
-#     <your name here>
+#     Ken Smith
+#	Tim O'Barr
+#	Jessica Smith
+# Hours:
+# 	Paired:
+#	Ken Smith:
+#	Tim O'Barr:
+#	Jessica Smith:
 # Summary:
-#     <put a description here>
+#     This program creates a Node for a Linked List and then
+#	proceeds to sort the linked list
+#Difficulties:
+# Ken Smith:
+# Tim O'Barr:
+# Jessica Smith:
 ###############################################################
 
 ##############################################################

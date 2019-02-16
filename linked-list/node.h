@@ -189,6 +189,10 @@ Node <T>* insert(T newItem, Node <T> *&pFront, bool after = false)
       
    }
 }
+/**********************************
+* Remove:
+* A simple function that removes an Node
+***************************************/
 
 template <class T>
 Node <T>* remove(Node <T> *pRemove)

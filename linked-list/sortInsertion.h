@@ -4,8 +4,10 @@
  * Summary:
  *    This will contain just the prototype for insertionSortTest(). You may
  *    want to put other class definitions here as well.
- * Author
- *    <your names here>
+ * Authors
+ *      Ken Smith
+ *      Jessica Smith
+ *      Tim O'Barr
  ************************************************************************/
 
 #ifndef INSERTION_SORT_H
@@ -21,36 +23,46 @@ template <class T>
 void sortInsertion(T array[], int num)
 {
  // 1. insert elements from array[] into a linked list
-   Node <T> *pFront = new Node <T>;
-
+   Node <T> *pFront = new Node <T>; //No pHead?
+   bool first = true;
+   
    for (int i = 0; i < num; i++)
    {
-      if (pFront == nullptr) //if it's the first element
+      
+      if(first)
       {
-         pFront = insert(pFront, array[i]);
+         pFront->data = array[i];
+         first = false;
       }
       else
       {
-         Node <T> *n = pFront;
-         while(array[i] >= n->data)
+         if(pFront->data > array[i])
          {
-            if(n->pNext != nullptr)
-            {
-               n = n->pNext;
-            }
-            else
-               break;
-         }
-         if(n->pNext != nullptr)
-         {
-            insert(array[i], n);
+            pFront = insert(array[i], pFront);
          }
          else
          {
-            insert(array[i], n, true);
+            Node <T> *n = pFront; //though it shoulld assign here it doesn't. hence my comment ;) Tim. yup
+            while(array[i] >= n->data)
+            {
+               if(n->pNext != nullptr)
+               {
+                  n = n->pNext;
+               }
+               else
+                  break;
+            }
+            if(array[i] >= n->data)
+            {
+               insert(array[i], n, true);
+            }
+            else
+            {
+               insert(array[i], n);
+            }
          }
-
       }
+         
 
    }
 
