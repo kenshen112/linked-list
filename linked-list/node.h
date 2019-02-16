@@ -43,7 +43,7 @@ Node <T> *copy (Node <T> *pFront )
    Node <T> *pHead = nullptr;
    do
    {
-      insert(tempNode->data, copyNode, true);
+      pHead = insert(tempNode->data, copyNode);
       tempNode = tempNode->pNext;
    } while (tempNode != nullptr);
    
