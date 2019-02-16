@@ -38,13 +38,23 @@ class Node
 template<class T>
 Node <T> *copy (Node <T> *pFront )
 {
-   Node <T> *copyNode = new Node <T>;
+   Node <T> *copyNode = nullptr;
    Node <T> *tempNode = pFront;
    Node <T> *pHead = nullptr;
+   bool first = true;
    do
    {
-      pHead = insert(tempNode->data, copyNode);
-      tempNode = tempNode->pNext;
+      if(first)
+      {
+         pHead = insert(tempNode->data, copyNode);
+         copyNode = pHead;
+      }
+      else
+      {
+         insert(tempNode->data, copyNode, true);
+         tempNode = tempNode->pNext;
+         copyNode = copyNode->pNext;
+      }
    } while (tempNode != nullptr);
    
    return pHead;
