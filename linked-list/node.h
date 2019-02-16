@@ -195,7 +195,7 @@ Node <T>* insert(T newItem, Node <T> *&pFront, bool isHead = false)
 template <class T>
 Node <T> remove(Node <T> *pRemove)
 {
-	
+	Node <T>* pReturn;
 
 	if (pRemove == nullptr)
 	{
@@ -211,7 +211,18 @@ Node <T> remove(Node <T> *pRemove)
 		pRemove->pNext->pPrev = pRemove->pPrev;
 	}
 
-	return pRemove;
+	if (pRemove->pPrev != nullptr)
+	{
+		pReturn = pRemove->pPrev;
+	}
+	else
+	{
+		pReturn = pRemove->pNext;
+	}
+
+	delete pRemove;
+
+	return pReturn;
 }
 
 /****************************************
