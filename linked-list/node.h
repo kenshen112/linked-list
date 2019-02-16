@@ -126,11 +126,9 @@ Node <T>* insert(Node <T> *&pFront, T newItem, bool after = false)
  * This is an overload to the above class
  ***************************************/
 template <class T>
-Node <T>* insert(T newItem, Node <T> *&pFront, bool isHead = false)
+Node <T>* insert(T newItem, Node <T> *&pFront, bool after = false)
 {
    Node <T> *itemNode = new Node<T>(newItem); //making a new node
-   
-   bool after = false;
 
    if (pFront == NULL)
    {
